@@ -8,17 +8,16 @@
     cmdline: ""
 
   pre_tasks:
-
     # Fix full /tmp when installing lots of AUR
     - name: temp increase /tmp size
       tags: always
       shell: mount -o remount,size=5G,noatime /tmp
 
-    - name: include guest role
-      tags: guest
-      include_role:
-        name: guest
-      when: ansible_virtualization_role == "guest"
+    # - name: include guest role
+    #   tags: guest
+    #   include_role:
+    #     name: guest
+    #   when: ansible_virtualization_role == "guest"
 
   roles:
     - { role: pacman, tags: pacman }
@@ -26,9 +25,9 @@
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
     - { role: flatpak, tags: flatpak }
-    - { role: cronie, tags: cronie }
-    - { role: virtualization, tags: virtualization }
-    - { role: ansible, tags: ansible }
+    # - { role: cronie, tags: cronie }
+    # - { role: virtualization, tags: virtualization }
+    # - { role: ansible, tags: ansible }
     - { role: containers, tags: containers }
     - { role: recovery, tags: recovery }
     - { role: zfs, tags: zfs }
