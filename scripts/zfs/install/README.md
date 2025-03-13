@@ -3,7 +3,6 @@
 Boot latest archiso
 
 ```bash
-$ loadkeys fr
 
 # Init ZFS module and install git
 $ curl -s https://raw.githubusercontent.com/eoli3n/archiso-zfs/master/init | bash
@@ -21,13 +20,13 @@ After installing Void Linux with [void-config](https://github.com/eoli3n/void-co
 
 ### EFI install
 
-- sda1  
-  /efi  
+- sda1
+  /efi
   FAT used as esp
-- sda2  
+- sda2
   ZFS pool
 
-``01-configure.sh`` will 
+``01-configure.sh`` will
 - Create partition scheme
 - Format everything
 - Mount partitions
